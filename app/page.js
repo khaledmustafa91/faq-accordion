@@ -44,7 +44,7 @@ export default function Home() {
         {/* </div> */}
 
         <div className="font-semibold">
-          <Accordion itemClasses={itemClasses}>
+          <Accordion itemClasses={itemClasses} defaultExpandedKeys={['1']}>
             <AccordionItem
               // base={{ 'data-hover': '' }}
               key="1"
