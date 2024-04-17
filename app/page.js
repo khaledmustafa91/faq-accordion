@@ -1,112 +1,110 @@
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import BackgroundImage from '../public/images/background-pattern-desktop.svg';
+import StarIcon from '../public/images/icon-star.svg';
+import { Accordion, AccordionItem } from '@nextui-org/react';
+import { MinusIcon } from '@/public/images/icon-minus';
+import { PlusIcon } from '../public/images/icon-plus.js';
 
 export default function Home() {
+  const itemClasses = {
+    title: 'hover:text-[#612b69] font-semibold max-[640px]:text-sm',
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-[#f9f0ff]">
+      <div
+        className="bg-[#000] w-full min-h-80"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+        }}
+      >
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={BackgroundImage}
+          alt="Cartoon graduates jump with happiness"
+          quality="100"
+          layout="fill"
+          objectFit="cover"
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <div className="text-[#000] bg-[#fff] lg:w-1/2 z-0 m-auto p-12 rounded-2xl min-[320px]:w-4/5">
+        {/* <div class="grid grid-cols-12 gap-1"> */}
+        <p className="text-5xl font-bold">
+          <Image
+            src={StarIcon}
+            style={{ display: 'inline', marginRight: '10px' }}
+            alt="star icon"
+          />
+          FAQs
+        </p>
+        {/* </div> */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className="font-semibold">
+          <Accordion itemClasses={itemClasses}>
+            <AccordionItem
+              // base={{ 'data-hover': '' }}
+              key="1"
+              aria-label="Accordion 1"
+              title="What is Frontend Mentor, and how will it help me?"
+              indicator={({ isOpen }) =>
+                isOpen ? <MinusIcon /> : <PlusIcon />
+              }
+            >
+              <p className="text-gray-500 font-normal max-[640px]:text-sm">
+                Frontend Mentor offers realistic coding challenges to help
+                developers improve their frontend coding skills with projects in
+                HTML, CSS, and JavaScript. It&apos;s suitable for all levels and
+                ideal for portfolio building.
+              </p>
+            </AccordionItem>
+            <AccordionItem
+              key="2"
+              aria-label="Accordion 2"
+              title="Is Frontend Mentor free?"
+              indicator={({ isOpen }) =>
+                isOpen ? <MinusIcon /> : <PlusIcon />
+              }
+            >
+              <p className="text-gray-500 font-normal max-[640px]:text-sm">
+                Yes, Frontend Mentor offers both free and premium coding
+                challenges, with the free option providing access to a range of
+                projects suitable for all skill levels.
+              </p>
+            </AccordionItem>
+            <AccordionItem
+              key="3"
+              aria-label="Accordion 3"
+              title="Can I use Frontend Mentor projects in my portfolio?"
+              indicator={({ isOpen }) =>
+                isOpen ? <MinusIcon /> : <PlusIcon />
+              }
+            >
+              <p className="text-gray-500 font-normal max-[640px]:text-sm">
+                Yes, you can use projects completed on Frontend Mentor in your
+                portfolio. It&apos;s an excellent way to showcase your skills to
+                potential employers!
+              </p>
+            </AccordionItem>
+            <AccordionItem
+              key="4"
+              aria-label="Accordion 4"
+              title="How can I get help if I'm stuck on a Frontend Mentor challenge?"
+              indicator={({ isOpen }) =>
+                isOpen ? <MinusIcon /> : <PlusIcon />
+              }
+            >
+              <p className="text-gray-500 font-normal max-[640px]:text-sm">
+                The best place to get help is inside Frontend Mentor&apos;s
+                Discord community. There&apos;s a help channel where you can ask
+                questions and seek support from other community members.
+              </p>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </div>
     </main>
   );
